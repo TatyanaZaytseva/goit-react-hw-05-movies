@@ -1,12 +1,10 @@
-import { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-// import css from 'pages/movies/movies.modules.css';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+
 import { searchMovies } from 'API/searchMovies';
-import { useSearchParams } from 'react-router-dom';
 import { SearchBar } from 'components/searchBar/searchBar';
 
-export function Movies() {
+function Movies() {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
@@ -15,7 +13,6 @@ export function Movies() {
   useEffect(() => {
     if (query) {
       searchMovies(query)
-        .then(console.log(query))
         .then(setMovies)
         .catch(error => console.error(error));
     }
@@ -42,3 +39,5 @@ export function Movies() {
     </main>
   );
 }
+
+export default Movies;

@@ -1,10 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getMovieCredits } from 'API/getMovieCredits';
 
-export function Cast() {
+import { getMovieCredits } from 'API/getMovieCredits';
+import {
+  Container,
+  Card,
+  Item,
+  Name,
+  Photo,
+} from 'components/cast/cast.styled';
+
+function Cast() {
   const [movieCast, setMovieCast] = useState([]);
-  //   const [error, setError] = useState(null);
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -12,25 +19,26 @@ export function Cast() {
       .then(data => setMovieCast(data))
       .catch(error => {
         console.error(error);
-        // setError(error);
       });
   }, [movieId]);
 
   return (
-    <div>
+    <Container>
       {movieCast.length > 0 && (
-        <ul>
+        <Card>
           {movieCast.map(actor => (
-            <li key={actor.id}>
-              <h3>{actor.name}</h3>
-              <img
+            <Item key={actor.id}>
+              <Name>{actor.name}</Name>
+              <Photo
                 src={`https://image.tmdb.org/t/p/w300${actor.profile_path}`}
                 alt=""
               />
-            </li>
+            </Item>
           ))}
-        </ul>
+        </Card>
       )}
-    </div>
+    </Container>
   );
 }
+
+export default Cast;

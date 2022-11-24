@@ -1,8 +1,13 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { Toaster } from 'react-hot-toast';
 import toast from 'react-hot-toast';
-import css from 'components/searchBar/searchBar.modules.css';
+
+import {
+  Container,
+  Input,
+  Form,
+  Button,
+} from 'components/searchBar/searchBar.styled';
 
 export function SearchBar({ onSubmit }) {
   const [movieName, setMovieName] = useState('');
@@ -24,11 +29,10 @@ export function SearchBar({ onSubmit }) {
   };
 
   return (
-    <main className={css.searchbar}>
+    <Container>
       <Toaster />
-      <form className={css.form} onSubmit={handleSubmit}>
-        <input
-          className={css.input}
+      <Form onSubmit={handleSubmit}>
+        <Input
           type="text"
           autoComplete="off"
           autoFocus
@@ -36,14 +40,8 @@ export function SearchBar({ onSubmit }) {
           onChange={handleInputChange}
           value={movieName}
         />
-        <button type="submit" className={css.button}>
-          Search
-        </button>
-      </form>
-    </main>
+        <Button type="submit">Search</Button>
+      </Form>
+    </Container>
   );
 }
-
-SearchBar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
