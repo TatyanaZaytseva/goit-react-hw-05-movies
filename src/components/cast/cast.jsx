@@ -16,10 +16,9 @@ export function Cast() {
       });
   }, [movieId]);
 
-  console.log(movieCast);
   return (
     <div>
-      {movieCast && (
+      {movieCast.length > 0 && (
         <ul>
           {movieCast.map(actor => (
             <li key={actor.id}>

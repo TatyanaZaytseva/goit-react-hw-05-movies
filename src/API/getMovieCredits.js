@@ -8,6 +8,5 @@ export async function getMovieCredits(movieId) {
   const response = await axios.get(url);
   const data = await response.data;
   const cast = await data.cast;
-  console.log(cast);
   return cast;
 }

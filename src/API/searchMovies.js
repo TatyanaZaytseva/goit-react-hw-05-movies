@@ -8,7 +8,5 @@ export async function searchMovies(query) {
   const response = await axios.get(url);
   const data = await response.data;
   const movie = await data.results;
-  console.log(movie);
-
   return movie;
 }

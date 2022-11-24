@@ -8,5 +8,6 @@ export async function getMovieReviews(movieId) {
   const response = await axios.get(url);
   const data = await response.data;
   const movieReviews = await data.results;
+
   return movieReviews;
 }
