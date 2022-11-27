@@ -2,13 +2,17 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
 import { searchMovies } from 'API/searchMovies';
-import { SearchBar } from 'components/searchBar/searchBar';
+import { SearchBar } from 'components/SearchBar/SearchBar';
 
 function Movies() {
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const location = useLocation();
   const query = searchParams.get('query') ?? '';
+
+  const handleFormSubmit = q => {
+    setSearchParams({ query: q });
+  };
 
   useEffect(() => {
     if (query) {
@@ -17,10 +21,6 @@ function Movies() {
         .catch(error => console.error(error));
     }
   }, [query]);
-
-  const handleFormSubmit = q => {
-    setSearchParams({ query: q });
-  };
 
   return (
     <main>

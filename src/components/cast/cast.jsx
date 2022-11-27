@@ -8,7 +8,7 @@ import {
   Item,
   Name,
   Photo,
-} from 'components/cast/cast.styled';
+} from 'components/Cast/Cast.styled';
 
 function Cast() {
   const [movieCast, setMovieCast] = useState([]);
