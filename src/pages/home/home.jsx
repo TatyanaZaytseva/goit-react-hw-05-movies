@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { getPopularFilms } from 'API/getPopularFilms';
+import { getPopularFilms } from 'api/getPopularFilms';
 
 function Home() {
   const [films, setFilms] = useState([]);

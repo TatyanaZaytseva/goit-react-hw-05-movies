@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useSearchParams } from 'react-router-dom';
 
-import { searchMovies } from 'API/searchMovies';
+import { searchMovies } from 'api/searchMovies';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 
 function Movies() {

@@ -1,7 +1,7 @@
 import { useEffect, useState, Suspense } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 
-import { getMovieDetails } from 'API/getMovieDetails';
+import { getMovieDetails } from 'api/getMovieDetails';
 import { BackLink } from 'components/BackLink/BackLink';
 import {
   Container,

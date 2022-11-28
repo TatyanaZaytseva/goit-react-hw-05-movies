@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getMovieCredits } from 'API/getMovieCredits';
+import { getMovieCredits } from 'api/getMovieCredits';
 import {
   Container,
   Card,
