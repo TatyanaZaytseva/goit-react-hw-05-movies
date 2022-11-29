@@ -1,4 +1,4 @@
-import { useEffect, useState, Suspense } from 'react';
+import { useEffect, useState, Suspense, useRef } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 
 import { getMovieDetails } from 'api/getMovieDetails';
@@ -18,7 +18,7 @@ const MovieDetails = () => {
 
   const { movieId } = useParams();
   const location = useLocation();
-  const backRef = location.state?.from ?? '/home';
+  const backRef = useRef(location.state?.from ?? '/home');
 
   const getGenres = () => {
     return genres.map(genre => genre.name).join(', ');
@@ -39,7 +39,7 @@ const MovieDetails = () => {
   return (
     <Container>
       <BackLinkBox>
-        <BackLink to={backRef}>Go back</BackLink>
+        <BackLink to={backRef.current}>Go back</BackLink>
       </BackLinkBox>
       {error && <div>ERROR!</div>}
       {movieDetails && (
