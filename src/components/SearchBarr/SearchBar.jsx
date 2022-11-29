@@ -7,7 +7,7 @@ import {
   Input,
   Form,
   Button,
-} from 'components/SearchBar/SearchBar.styled';
+} from 'components/SearchBarr/SearchBar.styled';
 
 export function SearchBar({ onSubmit }) {
   const [movieName, setMovieName] = useState('');
