@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { getMovieCredits } from 'api/getMovieCredits';
+import { getMovieCredits } from 'apii/getMovieCredits';
 import {
   Container,
   Card,
   Item,
   Name,
   Photo,
-} from 'components/Cast/Cast.styled';
+} from 'components/Castt/Cast.styled';
 
 function Cast() {
   const [movieCast, setMovieCast] = useState([]);

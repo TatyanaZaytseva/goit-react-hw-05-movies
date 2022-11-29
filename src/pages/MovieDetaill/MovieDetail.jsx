@@ -1,7 +1,7 @@
 import { useEffect, useState, Suspense } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 
-import { getMovieDetails } from 'api/getMovieDetails';
+import { getMovieDetails } from 'apii/getMovieDetails';
 import { BackLink } from 'components/BackLink/BackLink';
 import {
   Container,
@@ -9,7 +9,7 @@ import {
   MovieCard,
   MovieInfo,
   AdditionalInfo,
-} from 'pages/MovieDetail/MovieDetail.styled';
+} from 'pages/MovieDetaill/MovieDetail.styled';
 
 const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState({});
